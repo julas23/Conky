@@ -16,6 +16,29 @@ $ myconky
 ```
 
 This will install all pre requisites and configure all the resources necessary to use this template/layout.
+Follow below the parameters and objectives for each one:
 
+"pre" # preparation
+"use" # user-host
+"dis" # distro
+"ker" # kernel
+"upt" # uptime
+"pac" # packages
+"she" # shell
+"res" # resolution
+"env" # environment
+"win" # myndow manager
+"the" # theme
+"cpu" # cpu model
+"ctp" # cpu temperature
+"cfr" # CPU fan rotation
+"gpu" # gpu model
+"gfr" # GPU fan rotation
+"gtp" # gpu temperature
+"mob" # MotherBoard model
+"stp" # MoBo tmeperature
+"mem" # memory
+"cal" # calendar
+"all" # full output
 
 Enjoy
