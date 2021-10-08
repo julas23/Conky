@@ -16,6 +16,8 @@ $ myconky
 ```
 
 This will install all pre requisites and configure all the resources necessary to use this template/layout.
+
+```
 Follow below the parameters and objectives for each one:
 
 "pre" # preparation
@@ -40,5 +42,6 @@ Follow below the parameters and objectives for each one:
 "mem" # memory
 "cal" # calendar
 "all" # full output
+```
 
 Enjoy
