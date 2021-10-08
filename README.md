@@ -9,7 +9,7 @@ For now, the best way to use this template, is cloning and running the script. F
 ```shell
 $ cd /opt/
 $ sudo git clone https://github.com/julas23/Conky.git
-$ sudo apt install -y screenfetch cal ncal lm-sensors psensor gcalcli conky-all
+$ sudo apt install -y screenfetch cal ncal lm-sensors psensor gcalcli conky-all hwinfo
 $ cd conky
 $ sudo chmod +x myconky
 $ myconky
