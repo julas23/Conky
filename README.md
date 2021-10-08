@@ -11,7 +11,7 @@ $ cd /opt/
 $ sudo git clone https://github.com/julas23/Conky.git
 $ sudo apt install -y screenfetch cal ncal lm-sensors psensor gcalcli conky-all
 $ cd conky
-$ chmod +x myconky
+$ sudo chmod +x myconky
 $ myconky
 ```
 
