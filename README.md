@@ -10,6 +10,7 @@ For now, the best way to use this template, is cloning and running the script. F
 $ cd /opt/
 $ git clone https://github.com/julas23/Conky.git
 $ cd conky
+$ chmod +x myconky
 $ ./myconky pre
 ```
 
