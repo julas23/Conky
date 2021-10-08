@@ -1,0 +1,42 @@
+#!/bin/bash
+how_to_use ()
+{
+	echo "Usage:"
+	echo "myconky ??? - replace ??? with one of below"
+	echo "pre - To install all prerequisites"
+	echo "dis - To display Linux Distribution"
+	echo "she - Shell running"
+	echo "pac - Quantity of packages installed"
+	echo "res - Resolution actually in use"
+	echo "env - Environment"
+	echo "win - Window Maker"
+	echo "the - Theme in use"
+	echo "cpu - CPU model"
+	echo "gpu - GPU model"
+	echo "mem - Memory amount"
+	echo "use - User and host"
+	echo "cal - Calendar"
+}
+DAY=`date +%_d`
+
+if [[ -z "$1" ]]; then
+	how_to_use
+elif [[ "$1" == "pre" ]]; then apt install -y screenfetch cal ncal lm-sensors psensor gcalcli cpuid conky-all
+elif [[ "$1" == "use" ]]; then screenfetch -nN |awk 'NR==1 {print $1}' #user-host
+elif [[ "$1" == "dis" ]]; then screenfetch -nN |awk 'NR==2 {print $2,$3,$4}' #distro
+elif [[ "$1" == "ker" ]]; then screenfetch -nN |awk 'NR==3 {print $2,$3,$4}' #kernel
+elif [[ "$1" == "upt" ]]; then screenfetch -nN |awk 'NR==4 {print $2,$3}' #uptime
+elif [[ "$1" == "pac" ]]; then screenfetch -nN |awk 'NR==5 {print $2}' #packages
+elif [[ "$1" == "she" ]]; then screenfetch -nN |awk 'NR==6 {print $2}' #shell
+elif [[ "$1" == "res" ]]; then screenfetch -nN |awk 'NR==7 {print $2}' #resolution
+elif [[ "$1" == "env" ]]; then screenfetch -nN |awk 'NR==8 {print $2,$3}' #environment
+elif [[ "$1" == "win" ]]; then screenfetch -nN |awk 'NR==9 {print $2,$3}' #myndow manager
+elif [[ "$1" == "the" ]]; then screenfetch -nN |awk 'NR==10 {print $3}' #theme
+elif [[ "$1" == "cpu" ]]; then screenfetch -nN |awk 'NR==15 {print $3,$4,$5,$6,$7}' #cpu
+elif [[ "$1" == "gpu" ]]; then screenfetch -nN |awk 'NR==16 {print $3,$4,$5}' #gpu
+elif [[ "$1" == "mem" ]]; then screenfetch -nN |awk 'NR==17 {print $5}' #memory
+elif [[ "$1" == "all" ]]; then screenfetch -nN # full output
+elif [[ "$1" == "cal" ]]; then cal | sed '1d' | sed '/./!d' | sed 's/$/ /' | sed -n '/^.\{21\}/p' | sed 's/^/ /' | sed s/"\([^0-9]\)$DAY"'\b'/'${color red}'" $DAY"'${color}'/ #calendar
+else
+	how_to_use
+fi
